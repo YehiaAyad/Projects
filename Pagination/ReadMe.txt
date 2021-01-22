@@ -1,0 +1,1 @@
+MainMenu.html shows the user the 5 first elements in his database and <show more> button adds another 5 records , user can search for specific records and the search result will be paginated too. 

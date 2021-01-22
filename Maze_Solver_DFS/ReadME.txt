@@ -1,0 +1,1 @@
+Program read a maze from txt file and then finds solution of the maze using DFS Algorithm

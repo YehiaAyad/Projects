@@ -1,0 +1,1 @@
+Program the takes a 8 puzzle and tries to solve it using Algorithms BFS, DFS and A*.

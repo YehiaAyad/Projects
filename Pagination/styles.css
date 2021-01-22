@@ -1,0 +1,61 @@
+
+.body2 {
+  background-image: url('10.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+  
+echo { 
+    font-family:cursive;
+        color: aqua;
+        font-size: 18;
+}
+
+    input {
+        align-self: center;
+       margin-left: 700;
+       margin-top: 10;
+
+    }
+    .login{
+        text-align: center;
+        font-family:cursive;
+       background-color: aliceblue;
+        color: fuchsia;
+        font-size: 18;
+        align-self: auto;
+        margin-left: 730;
+        margin-top: 10;
+        
+    }
+button{
+        text-align: center;
+        font-family:cursive;
+       
+        color: black;
+        font-size: 18;
+        align-self: auto;
+        margin-left: 650;
+        margin-top: 10;
+    }
+    a{
+        color: aqua;
+        margin-left: 50;
+        margin-top: 10;
+        
+    }
+ .a1{
+        color: aqua;
+         margin-left: 50;
+        margin-top: 10;
+        
+    }
+.more{text-align: center;
+        font-family:cursive;
+       background-color: white;
+        color: black;
+        font-size: 18;
+        align-self: auto;
+        margin-left: 650;
+        margin-top: 10;}

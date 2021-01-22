@@ -1,0 +1,1 @@
+This is a program that reads words from a txt file and then adds them in a Red-Black tree , Then the user has the option of either checking a word is present in the tree or not , or choose to add a new word to the tree and see the new height of the tree

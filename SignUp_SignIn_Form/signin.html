@@ -1,0 +1,45 @@
+<html>
+ <link rel="stylesheet" href="styles.css">
+<title>Login Form</title>
+    <body class="body0">
+    <h1 >LOGIN</h1>
+  <form action="method2.php" method="post">
+        <label>Email</label>
+    <input type="email" placeholder="Enter Email" required id="email" name="email">
+ <hr>
+      
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" required id="pass" name="pass">
+<hr>
+        <button type="submit" class="Login" onclick="validate()">Login</button>
+      <a class="a1" href="MainMenu.html">Want to create a new account? Sign Up Now</a>
+        </form>
+        <script>
+ function emailIsValid (email) {
+  return /\S+@\S+\.\S+/.test(email)
+}
+function validate() {
+  var x, y,text;
+    x = document.getElementById("email").value;
+    y= document.getElementById("pass").value;
+  if(x=="" && y=="")
+    {text="Email and Password are Empty";
+     alert(text);}
+    else if (x=="") {
+    text = "Email is Empty!";
+  alert(text);} 
+    else if(y=="") {
+    text = "Password is Empty!";
+  alert(text);}
+    else if(emailIsValid(x)==false)
+    {text="Invalid Email!";
+ alert(text);
+    document.getElementById("email").value='';}
+}
+</script>
+        
+    </body>
+    
+    
+    
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        
+</head>
+    <body class="body2">
+        <button id="ok" name="ok">Show More</button>
+        
+            <button id="search" style="float: right;" >Search</button>
+        
+        <input id="input" placeholder="SEARCH" size="15" style="float: right;">
+    
+        <div class="container">
+   <table id="userTable" border="1" >
+      <thead>
+        <tr>
+          <th width="5%">Course_Id</th>
+          <th width="20%">Course_Name</th>
+          <th width="30%">Course_Description</th>
+          <th width="30%">Department Name</th>
+         <th width="30%">Professor Name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+   </table>
+</div>
+        
+        </body>
+<script type="text/javascript">
+    page=1;
+    document.getElementById("ok").onclick = function() {validate()};
+    document.getElementById("search").onclick = function() {validate1()};
+function fetch(page,variable){
+    
+    $.ajax({
+        url: 'ajax.php',
+        type: 'GET',
+        dataType: 'json',
+        data:{"page":page,"search":variable},
+        success: function(response){
+          console.log(response);
+            var len = response.length;
+            for(var i=0; i<len; i++){
+                var course_id = response[i].course_id;
+                var course_name = response[i].course_name;
+                var course_description = response[i].course_description;
+                var department_name = response[i].department_name;
+              var professor_name = response[i].professor_name;
+                var tr_str = "<tr>" +
+                    "<td align='center'>" + course_id + "</td>" +
+                    "<td align='center'>" + course_name + "</td>" +
+                    "<td align='center'>" + course_description + "</td>" +
+                    "<td align='center'>" + department_name + "</td>" +
+                   "<td align='center'>" + professor_name + "</td>" +
+                    "</tr>";
+
+                $("#userTable tbody").append(tr_str);}
+            
+
+        },
+         error : function (jqXHR, textStatus, errorThrown) {
+    console.log(jqXHR);
+    console.log(textStatus);
+    console.log(errorThrown);
+  }
+    });
+};
+    
+function validate() {
+    
+    page=page+1;
+    fetch(page,document.getElementById("input").value);
+    console.log(document.getElementById("input").value);
+}
+    function validate1() {
+        $("#userTable tbody").empty();
+      var x = document.getElementById("input").value;
+        page=1;
+        fetch(1,x);
+}
+   
+     
+fetch(1,"");    </script>
+
+</html>

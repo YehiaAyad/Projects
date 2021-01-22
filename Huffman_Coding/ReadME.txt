@@ -1,0 +1,1 @@
+This programs takes text file and applies Huffman coding to it to compress its size , then using the header it can decompress it.

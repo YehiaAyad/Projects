@@ -1,0 +1,1 @@
+MainMenu.html is main page that asks the user if he wants to create a new account or want to login , Method1,2 connect to a sql database and checks if the user exists and valdiate the email then view contents of another sql table 

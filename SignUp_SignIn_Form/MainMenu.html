@@ -1,0 +1,69 @@
+<html>
+<link rel="stylesheet" href="styles.css">
+<title>Registration Form</title>
+    <body class="body0">
+    <h1 >Create A New Account</h1>
+   <form action="method.php" method="post">
+       <label>Name</label>
+    <input type="name" placeholder="Enter Your Name" required id="name" name="name" >
+<hr>
+       <label>Email</label>
+    <input type="email" placeholder="Enter Email" required id="email" name="email" >
+<hr>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" required id="pass" name="pass" >
+<hr>
+    <label><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" required id="pass2" name="pass2" >
+  <hr>
+        <button onclick="validate()">Sign Up </button>
+ <a href="signin.html">Already have an account? Sign In</a>
+    
+</form>
+
+        <script>
+ function emailIsValid (email) {
+  return /\S+@\S+\.\S+/.test(email)
+}
+            
+function validate() {
+  var x,y,z,text;
+    x = document.getElementById("email").value;
+    y= document.getElementById("pass").value;
+    z= document.getElementById("pass2").value;
+    g=document.getElementById("name").value;
+
+  if(x=="" && y=="" && z=="" && g=="")
+    {text="Email and Passwords are Empty";
+     alert(text);}
+    else if (x=="") {
+    text = "Email is Empty!";
+  alert(text);} 
+    else if(y=="") {
+    text = "Password is Empty!";
+  alert(text);}
+    else if(z=="") {
+    text = "The Repeated Password is Empty!";
+  alert(text);}
+    else if(g=="")
+        { text = "The Name is Empty!";
+  alert(text);} 
+    else if(emailIsValid(x)==false)
+    {text="Invalid Email!";
+ alert(text);
+    document.getElementById("email").value='';}
+    else if(y!=z)
+        {text="Passwords don't match!";
+          document.getElementById("pass").value='';
+         document.getElementById("pass2").value='';
+ alert(text);
+      
+        }
+        
+}
+</script>
+    </body>
+    
+    
+    
+</html>
